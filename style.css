@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgcolor: #445D48;
+    --semitext: #D6CC99;
+    --altbgcolor: #FDE5D4;
+    --blackcolor: #001524;
+    --titletext:'FoundationTitles', sans-serif;
+}
+
+@font-face {
+    font-family: 'FoundationTitles';
+    src: url('FoundationTitlesHand-v0.85.ttf');
+}
+
+body {
+    background-color: #445D48;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: var(--titletext);
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+}
+
+h1 span {
+    color: #D6CC99;
+}
+
+#gridSection {
+    min-height: 200px;
+    background-color: var(--altbgcolor);
+}
