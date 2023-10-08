@@ -1,0 +1,158 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'FoundationTitles';
+    src: url('../FoundationTitlesHand-v0.85.ttf');
+}
+
+h2 {
+    font-family: 'FoundationTitles', sans-serif;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+
+header nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    padding: 20px;
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #393646;
+}
+@media screen and (max-width:1000px) {
+    header nav {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 599px) {
+    header nav {
+        grid-template-columns: 1fr;
+    }
+}
+
+header nav a {
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    border-width: 2px;
+    border-color: #F4EEE0;
+    background-color: #6D5D6E;
+    color: #F4EEE0;
+    transition: 800ms;
+}
+header nav a:hover {
+    background-color: #F4EEE0;
+    color: #393646;
+}
+
+#aboutUs {
+    background-color: #4F4557;
+    color: #F4EEE0;
+    padding-bottom: 30px;
+}
+
+#aboutUs p {
+    text-align: justify;
+}
+section p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+section p span {
+    color: blue;
+    font-weight: 600;
+}
+
+#contactUs {
+    background-color: #F4EEE0;
+    color: #393646;
+
+}
+
+#ourFees {
+    background-color: #6D5D6E;
+    color: #F4EEE0;
+    
+}
+
+#collaborators {
+    background-color: #F4EEE0;
+    overflow-x: hidden;
+}
+
+#collabGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+                        "sumith x1"
+                        "sumith x2"
+                        "sumith x3"
+                        "x4 x4"
+                                    ;
+    gap: 10px;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    background-color: #F4EEE0;
+    padding: 20px;
+}
+#collabGrid a {
+    text-decoration: none;
+    /* text-align: center; */
+    border-style: double;
+    border-width: 2px;
+    border-color: #393646;
+    background-color: #F4EEE0;
+    transition: 800ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+#collabGrid a:hover {
+    background-color: #393646;
+    color: #F4EEE0;
+}
+#sumith {
+    grid-area: sumith;
+}
+#x1 {
+    grid-area: x1;
+}
+#x2 {
+    grid-area: x2;
+}
+#x3 {
+    grid-area: x3;
+}
+#x4 {
+    grid-area: x4;
+}
+
+footer {
+    background-color: #393646;
+    color: #F4EEE0;
+    font-size: 20px;
+    text-align: center;
+    padding: 30px;
+}
+
+
+
+
