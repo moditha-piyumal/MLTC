@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgcolor: #445D48;
+    --semitext: #D6CC99;
+    --altbgcolor: #FDE5D4;
+    --blackcolor: #001524;
+    --titletext:'FoundationTitles', sans-serif;
+}
+
+@font-face {
+    font-family: 'FoundationTitles';
+    src: url('FoundationTitlesHand-v0.85.ttf');
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url("waterfall.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.container .box {
+    width: 80vw;
+    min-height: 80vh;
+    /* margin: auto; */
+    align-self: center;
+    /* justify-self: center; */
+    background-color: rgba(111, 122, 222, 0.2);
+    border-color: #D6CC99;
+    border-style: solid;
+    border-width: 5px;
+    z-index: 3;
+    border-radius: 20px;
+    color: #FDE5D4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    box-shadow: 14px 12px 16px -1px rgba(24,247,46,0.81);
+}
+
+.submit-button {
+    border-radius: 20%;
+    min-height: 40px;
+    min-width: 40px;
+    font-size: 20px;
+    background-color: #001524;
+    color: #D6CC99;
+    padding: 4px;
+    transition: 1s;
+}
+.submit-button:hover {
+    background-color: #D6CC99;
+    color: #445D48;
+}
+
+.form-group {
+    padding-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    text-align: center;
+}
+
+.form-group input {
+    display: block;
+    width: 70vw;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 23px;
+    color: black;
+    border-radius: 5px;
+}
