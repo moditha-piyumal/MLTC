@@ -51,6 +51,13 @@
     box-shadow: 14px 12px 16px -1px rgba(24,247,46,0.81);
 }
 
+input[type="text"] {
+    text-transform: uppercase;
+}
+#towns {
+    text-transform: capitalize;
+}
+
 
 
 .submit-button {
@@ -71,6 +78,10 @@
 .form-group {
     padding-bottom: 10px;
 }
+.form-group h2 {
+    text-align: center;
+    color: greenyellow;
+}
 
 .form-group label {
     display: block;
@@ -84,4 +95,5 @@
     font-size: 23px;
     color: black;
     border-radius: 5px;
+    padding-left: 5px;
 }
