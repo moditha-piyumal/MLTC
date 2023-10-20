@@ -97,3 +97,28 @@ input[type="text"] {
     border-radius: 5px;
     padding-left: 5px;
 }
+
+#back-button {
+    font-size: 15px;
+    color: #001524;
+    background-color: #FDE5D4;
+    position: fixed;
+    top: 3px;
+    left: 5px;
+    z-index: 5;
+    max-width: 90px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border-color: #445D48;
+    border-width: 3px;
+    border-style: groove;
+    box-shadow: 6px 5px 6px -1px rgba(24,247,46,0.61);
+    transition: 1s;
+}
+#back-button:hover {
+    box-shadow: 6px 5px 6px -1px rgba(177, 218, 181, 0.61);
+    color: #D6CC99;
+    background-color: #001524;
+    font-size: 15px;
+}
