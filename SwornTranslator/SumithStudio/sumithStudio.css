@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'FoundationTitles';
+    src: url('../../FoundationTitlesHand-v0.85.ttf');
+}
+
 :root {
     --bgcolor: #445D48;
     --semitext: #D6CC99;
@@ -12,9 +17,43 @@
     --titletext:'FoundationTitles', sans-serif;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'FoundationTitles';
     src: url('FoundationTitlesHand-v0.85.ttf');
+} */
+
+header h1 {
+    font-family: var(--titletext);
+    color: #445D48;
+    text-align: center;
+    padding: 50px 10px 20px 10px;
+}
+header p {
+    text-align: center;
+    color: #001524;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header ul {
+    color: #001524;
+    font-size: 15px;
+    list-style-type: disc;
+    /* text-align: justify; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+header ul li {
+    padding-top: 7px;
+    list-style-type: circle;
+    display: list-item;
+    list-style-type: disc;
+    text-decoration: dotted;
+
+}
+header {
+    background-color: #D6CC99;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
 }
 
 .container {
@@ -121,4 +160,5 @@ input[type="text"] {
     color: #D6CC99;
     background-color: #001524;
     font-size: 15px;
+    /* font-family: var(--titletext); */
 }
