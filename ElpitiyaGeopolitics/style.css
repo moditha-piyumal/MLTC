@@ -1,0 +1,300 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Style the header section */
+header {
+    background-color: #d62e2e; /* Change to your preferred color */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Style the logo and navigation links */
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+/* 
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+} */
+
+/* Add this CSS for the hamburger menu */
+/* Add this CSS for the hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px; /* Adjust the margin as needed */
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff; /* Change to your preferred color */
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 1s;
+}
+
+ul {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+
+ul li {
+    padding-right: 14px;
+    list-style: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 1s;
+}
+ul li a:hover {
+    color: #fff;
+}
+
+/* Display the hamburger menu on screens less than 1000px wide */
+@media (max-width: 1000px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    ul {
+        display: none;
+        position: absolute;
+        background-color: #fff; /* Background color for the dropdown menu */
+        list-style: none;
+        padding: 10px;
+        border: 1px solid #ccc; /* Add a border for the dropdown */
+        z-index: 1; /* Ensure the dropdown is on top */
+    }
+
+    input:checked + .menu-toggle + ul {
+        display: block;
+        width: 100vw;
+        position: absolute;
+        left: 0;
+        top: 70px;
+        /* color: #d62e2e; */
+        background-color: #d62e2e;
+        border: none;
+        padding-left: 25px;
+
+    }
+    input:checked + .menu-toggle .bar {
+        background-color: #ccc;
+    }
+}
+#menu-toggle {
+    display: none;
+}
+
+
+
+
+/* Style the Featured Post Section */
+.featured-post {
+    position: relative;
+    height: min-content;
+}
+
+.featured-post-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Text color for the heading and description */
+}
+
+.featured-post h2 {
+    font-size: 36px; /* Adjust the font size as needed */
+    margin-bottom: 7px;
+    /* margin-top: 10px; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: #333 5px 4px 6px;
+}
+
+.featured-post p {
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-bottom: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: #333 5px 4px 6px;
+}
+
+.read-more-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #d62e2e; /* Button background color */
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 1s;
+    box-shadow: #333 4px 4px 3px;
+}
+.read-more-button:hover {
+    color: #d62e2e;
+    background-color: #fff;
+    box-shadow: #333 7px 7px 7px;
+}
+
+/* Style the featured image */
+.featured-post img {
+    min-width: 100vw;
+    height: 84vh;
+    object-fit: cover;
+}
+
+/* Adjust the background color and padding of the section */
+.featured-post {
+    background-color: #333; /* Change to your preferred background color */
+    padding: 0; /* Adjust the padding as needed */
+}
+
+
+
+
+
+/* Style the Post Cards as a Responsive Grid */
+.latest-posts {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to a single column */
+
+    grid-gap: 20px; /* Add spacing between cards */
+    margin: 10px 10px; /* Center the grid horizontally */
+
+    /* Media Query for two columns on screens between 600px and 1000px */
+    @media (min-width: 600px) and (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Media Query for three columns on screens larger than 1000px */
+    @media (min-width: 1000px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Style the Post Cards (Individual Cards) */
+.post-card {
+    background-color: #fff; /* Card background color */
+    border: 1px solid #ddd; /* Add a border around the card */
+    border-radius: 5px; /* Add rounded corners to the card */
+    padding: 20px; /* Add padding around each card */
+    transition: 1s;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.post-card:hover {
+    background-color: #d62e2e;
+    color: #fff;
+}
+
+.post-card img {
+    max-width: 100%; /* Ensure the image doesn't exceed the card's width */
+    height: auto;
+    object-fit: cover; /* Maintain image aspect ratio */
+}
+
+.post-card h2 {
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    font-size: 16px; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+}
+
+.post-card a {
+    display: block;
+    padding: 10px 20px;
+    background-color: #d62e2e; /* Button background color */
+    border: solid #ccc;
+    color: #fff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* Style the about section */
+.about {
+    background-color: #fff; /* Change to your preferred color */
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #d62e2e;
+    line-height: 150%;
+}
+
+.about p {
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+/* Style the footer section */
+footer {
+    background-color: #333; /* Change to your preferred color */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.social-media {
+    list-style: none;
+    text-align: center; /* Center the social media links */
+}
+
+.social-media li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.social-media a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Media Query for Small Screens (e.g., Phones) */
+@media (max-width: 600px) {
+    .social-media li {
+        display: block; /* Convert social media links to a vertical list */
+        margin-right: 0; /* Remove right margin to maintain spacing */
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Additional CSS styling for your cards can be added as needed */
