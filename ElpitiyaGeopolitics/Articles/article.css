@@ -164,6 +164,9 @@ h1 {
 .article-text h3 {
     margin-top: 10px;
 }
+.article-text p {
+    padding-bottom: 15px;
+}
 
 /* Media Query for larger screens (greater than 640px) */
 @media (min-width: 640px) {
