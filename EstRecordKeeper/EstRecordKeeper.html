@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elpitiya Sworn Translator Record Keeper 🌀</title>
+    <link rel="stylesheet" href="bootstrap.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="h1 mt-4 mb-4">
+            Elpitiya Sworn Translator Record Keeper 🌀
+        </h1>
+
+        <form id="book-form" class="mb-4">
+    
+            <div class="form-group">
+                <label class="col-form-label col-form-label-lg mt-4 mb-1" for="clientname">Client Name</label>
+                <input class="form-control form-control-lg" type="text" placeholder="Type the Name of the Client" id="clientname">
+              </div>
+
+              <div class="form-group">
+                <label class="col-form-label col-form-label-lg mt-4 mb-1" for="number">Contact Number</label>
+                <input class="form-control form-control-lg" type="text" placeholder="Type the Number of the Client" id="number">
+              </div>
+
+              <div class="form-group">
+                <label class="col-form-label col-form-label-lg mt-4 mb-1" for="datetime">Deadline</label>
+                <input class="form-control form-control-lg" type="datetime-local" placeholder="Select the Date" id="datetime">
+              </div>
+
+              <div class="form-group">
+                <label for="spellings" class="col-form-label col-form-label-lg mt-4 mb-1">Spellings of Names</label>
+                <textarea class="form-control form-control-lg" id="spellings" placeholder="Type the Names that are important" rows="3"></textarea>
+              </div>
+
+
+
+              <input type="submit" value="Add Client" class="btn btn-block btn-dark mt-4 col-12">
+    
+    
+        </form>
+
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>Client Name</th>
+                    <th>Contact Number</th>
+                    <th class="col-3">Deadline</th>
+                    <th>Spellings of Names and Places</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody class="" id="client-list">
+
+            </tbody>
+
+
+        </table>
+
+    </div>
+
+    <script src="estapp.js"></script>
+</body>
+</html>
