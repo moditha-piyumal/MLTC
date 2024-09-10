@@ -9,13 +9,14 @@
     --semitext: #D6CC99;
     --altbgcolor: #FDE5D4;
     --blackcolor: #001524;
-    --titletext:'FoundationTitles', sans-serif;
+    --titletext: 'FoundationTitles', sans-serif;
 }
 
 @font-face {
     font-family: 'FoundationTitles';
     src: url('FoundationTitlesHand-v0.85.ttf');
 }
+
 /* Not a preview */
 body {
     background-color: #445D48;
@@ -42,15 +43,15 @@ h1 span {
     display: grid;
     grid-template-rows: repeat(8, 1fr);
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-                        "ga gb gc gd"
-                        "ge gf gg gh"
-                        "gi gf gj gh"
-                        "gk gl gm gn"
-                        "go go gp gq"
-                        "go go gr gq"
-                        "gs gt gu gv"
-                        "gw gx gy gz";
+    grid-template-areas:
+        "ga gb gc gd"
+        "ge gf gg gh"
+        "gi gf gj gh"
+        "gk gl gm gn"
+        "go go gp gq"
+        "go go gr gq"
+        "gs gt gu gv"
+        "gw gx gy gz";
     justify-content: space-evenly;
     align-content: space-evenly;
     gap: 20px;
@@ -67,143 +68,181 @@ h1 span {
     font-size: 20px;
 
 }
+
 .gridItem:hover {
     background-color: var(--blackcolor);
     border-radius: 3%;
-    box-shadow: -3px 17px 19px -10px rgba(0,0,0,0.75);
+    box-shadow: -3px 17px 19px -10px rgba(0, 0, 0, 0.75);
 
 }
+
 
 .ga {
     text-decoration: none;
     color: var(--semitext);
     grid-area: ga;
 }
+
 .gb {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gb;
 }
+
 .gc {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gc;
 }
+
 .gd {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gd;
 }
+
 .ge {
     text-decoration: none;
     color: var(--semitext);
     grid-area: ge;
 }
+
 .gf {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gf;
 }
+
 .gg {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gg;
 }
+
 .gh {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gh;
 }
+
 .gi {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gi;
 }
+
 .gj {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gj;
 }
+
 .gk {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gk;
 }
+
 .gl {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gl;
 }
+
 .gm {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gm;
 }
+
 .gn {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gn;
 }
+
 .go {
     text-decoration: none;
     color: var(--semitext);
     grid-area: go;
 }
+
 .gp {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gp;
 }
+
 .gq {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gq;
 }
+
 .gr {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gr;
 }
+
 .gs {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gs;
 }
+
 .gt {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gt;
 }
+
 .gu {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gu;
 }
+
 .gv {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gv;
 }
+
 .gw {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gw;
 }
+
 .gx {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gx;
 }
+
 .gy {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gy;
 }
+
 .gz {
     text-decoration: none;
     color: var(--semitext);
     grid-area: gz;
 }
+
+.done {
+    background-color: var(--altbgcolor);
+    border: solid #001524 1px;
+    color: var(--blackcolor);
+}
+
+.done:hover {
+    color: #D6CC99;
+}
+
 
 /* This is the grid section. The grid is not too complicated and glassmorphism was not added this time to simplify things. The gird is a bit complicated and although I have done css for a long time, this is the first time I used grid areas to get the effect I wanted.  */
 
