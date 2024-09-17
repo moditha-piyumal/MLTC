@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer with Two Progress Bars</title>
+    <link rel="stylesheet" href="PomoCSS.css">
+</head>
+
+<body>
+
+    <h2 id="timerTitle">Set Your Timers</h2>
+    <h3 id="timeDisplay">Select times to begin</h3>
+
+    <!-- Slider to select the Study Time -->
+    <div class="rangeContainer">
+        <label for="studyRange">Select Study Time ⬇️</label>
+        <input type="range" id="studyRange" min="1" max="60" value="30">
+        <p>
+            <span id="studyValue">30</span> minutes
+
+        </p>
+
+    </div>
+
+    <br><br>
+
+    <!-- Slider to select the Rest Time -->
+    <div class="rangeContainer">
+        <label for="restRange">Select Rest Time ⬇️</label>
+        <input type="range" id="restRange" min="1" max="60" value="30">
+        <p>
+            <span id="restValue">30</span> minutes
+
+        </p>
+
+    </div>
+
+    <br><br>
+
+    <!-- Slider to select the number of cycles -->
+    <div class="rangeContainer">
+
+        <label for="cycleRange">Select Number of Turns ⬇️</label>
+        <input type="range" id="cycleRange" min="1" max="10" value="4">
+        <p>
+            <span id="cycleValue">4</span> Turns
+
+        </p>
+    </div>
+
+    <br><br>
+
+    <!-- Progress Bar for Study Timer -->
+
+    <div class="rangeContainer2">
+
+        <label for="studyProgress">Study Timer ⬇️</label>
+        <input type="range" id="studyProgress" min="0" max="100" value="0" disabled>
+    </div>
+
+    <br><br>
+
+    <!-- Progress Bar for Rest Timer -->
+    <div class="rangeContainer2">
+
+        <label for="restProgress">Rest Timer ⬇️</label>
+        <input type="range" id="restProgress" min="0" max="100" value="0" disabled>
+    </div>
+
+    <br><br>
+
+    <!-- Buttons to start and stop the timer -->
+    <button id="startButton" class="button-27">Start Pomodoro</button>
+    <button id="stopButton" class="button-27">Stop Timer</button>
+
+    <script src="PomoJS.js"></script>
+
+</body>
+
+</html>
