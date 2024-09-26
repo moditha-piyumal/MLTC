@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Expense Tracker</h1>
+
+    <!-- Dropdown to select past months -->
+    <select id="monthDropdown">
+        <option value="">Select a month</option>
+    </select>
+
+
+    <!-- Form to add new expenses -->
+    <form id="expenseForm">
+        <input type="number" id="amount" placeholder="Amount" required>
+        <input type="text" id="description" placeholder="Description" required>
+        <select id="category">
+            <option value="EssentialFood">Essential Food</option>
+            <option value="LuxuryFood">Luxury Food</option>
+            <option value="Transportation">Transportation</option>
+            <option value="Healthcare">Healthcare</option>
+            <option value="Utilities">Utilities</option>
+            <option value="Clothes">Clothes</option>
+            <option value="Others">Others</option>
+        </select>
+        <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Div to display the expenses -->
+    <div id="expenseList"></div>
+
+    <!-- Div to display category totals -->
+    <div class="category-diagram">
+
+        <div id="categoryTotals"></div>
+
+        <div id="categoryChart">
+
+            <div class="category-bar-EssentialFood"></div>
+            <div class="category-bar-LuxuryFood"></div>
+            <div class="category-bar-Transportation"></div>
+            <div class="category-bar-Healthcare"></div>
+            <div class="category-bar-Utilities"></div>
+            <div class="category-bar-Clothes"></div>
+            <div class="category-bar-Others"></div>
+        </div>
+
+
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>

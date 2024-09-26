@@ -10,7 +10,7 @@ body {
 
 #timerTitle {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 50px;
+    font-size: 30px;
     color: darkblue;
     text-align: center;
     padding: 7px;
@@ -39,7 +39,7 @@ body {
     margin: 5px auto;
     border-radius: 20px;
     text-align: center;
-    padding-bottom: 10px;
+    padding-bottom: 6px;
 }
 
 .rangeContainer label {
@@ -49,28 +49,30 @@ body {
 }
 
 .rangeContainer p {
-    font-size: 16px;
+    font-size: 15px;
     color: black;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
 }
 
 .rangeContainer2 {
     display: grid;
     justify-content: center;
-    gap: 3px;
+    gap: 1px;
     min-width: 300px;
     border: 2px solid rgb(33, 19, 226);
-    margin: 5px auto;
+    background-color: #000000;
+    margin: 2px auto;
     border-radius: 10px;
     text-align: center;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
 }
 
 .rangeContainer2 label {
-    font-size: 20px;
-    color: #0b255c;
+    font-size: 22px;
+    color: #dde1e9;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 4px;
 }
 
 
@@ -87,13 +89,13 @@ body {
     font-size: 16px;
     font-weight: 600;
     line-height: normal;
-    margin: 5px auto;
+    margin: 7px auto;
     min-height: 60px;
     min-width: 300px;
     width: 100%;
     max-width: 100%;
     outline: none;
-    padding: 6px 18px;
+    padding: 6px 8px;
     text-align: center;
     text-decoration: none;
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
@@ -143,7 +145,7 @@ input[type="range"] {
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 350px;
+    width: 450px;
 }
 
 /* Removes default focus */
@@ -156,7 +158,7 @@ input[type="range"]:focus {
 input[type="range"]::-webkit-slider-runnable-track {
     background-color: #e713af;
     border-radius: 10px;
-    height: 10px;
+    height: 14px;
 }
 
 /* slider thumb */
@@ -164,7 +166,7 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     /* Override default look */
     appearance: none;
-    margin-top: -5px;
+    margin-top: -2.5px;
     /* Centers thumb on the track */
     background-color: #2810e0;
     border-radius: 50%;
@@ -224,7 +226,7 @@ input[type="range"]:focus::-moz-range-thumb {
     appearance: none;
     background: transparent;
     cursor: pointer;
-    width: 350px;
+    width: 450px;
 }
 
 /* Removes default focus */
@@ -237,7 +239,7 @@ input[type="range"]:focus::-moz-range-thumb {
 .rangeContainer2 input[type="range"]::-webkit-slider-runnable-track {
     background-color: #09abe1;
     border-radius: 50px;
-    height: 8.5px;
+    height: 8px;
 }
 
 /* slider thumb */
@@ -245,16 +247,16 @@ input[type="range"]:focus::-moz-range-thumb {
     -webkit-appearance: none;
     /* Override default look */
     appearance: none;
-    margin-top: 0.25px;
+    margin-top: -2px;
     /* Centers thumb on the track */
     background-color: #f415c4;
     border-radius: 50px;
-    height: 8px;
-    width: 8px;
+    height: 12px;
+    width: 12px;
 }
 
 .rangeContainer2 input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid #f415c4;
+    outline: 1px solid #f415c4;
     outline-offset: 0.125rem;
 }
 
@@ -263,7 +265,7 @@ input[type="range"]:focus::-moz-range-thumb {
 .rangeContainer2 input[type="range"]::-moz-range-track {
     background-color: #09abe1;
     border-radius: 50px;
-    height: 8.5px;
+    height: 8px;
 }
 
 /* slider thumb */
@@ -272,8 +274,8 @@ input[type="range"]:focus::-moz-range-thumb {
     border: none;
     /*Removes extra border that FF applies*/
     border-radius: 50px;
-    height: 8px;
-    width: 8px;
+    height: 12px;
+    width: 12px;
 }
 
 .rangeContainer2 input[type="range"]:focus::-moz-range-thumb {

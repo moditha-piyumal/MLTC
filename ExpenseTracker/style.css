@@ -1,0 +1,223 @@
+/* Universal reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body background */
+body {
+    background-color: #FFFBE6;
+    /* Light cream background for the entire app */
+    color: #347928;
+    /* Dark green for the default text color */
+    font-family: Arial, sans-serif;
+    /* General font family */
+    padding: 20px;
+}
+
+/* Heading styles */
+h1 {
+    font-family: cursive;
+    font-size: 28px;
+    text-align: center;
+    color: #347928;
+    /* Dark green text for the heading */
+    margin-bottom: 20px;
+}
+
+/* Container styling */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    /* Center the container */
+    background-color: #C0EBA6;
+    /* Light green background */
+    padding: 20px;
+    border-radius: 10px;
+    /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #347928;
+    /* Dark green borders */
+}
+
+/* Button styling */
+button {
+    background-color: #FCCD2A;
+    /* Vibrant yellow background for the button */
+    color: #347928;
+    /* Dark green text */
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #347928;
+    /* Dark green background on hover */
+    color: #FFFBE6;
+    /* Light cream text on hover */
+}
+
+/* Expense list styling */
+/* Expense container */
+/* Expense container with limited height and scrollable content */
+#expenseList {
+    background-color: #FFFBE6;
+    /* Light cream background */
+    padding: 10px;
+    border: 1px solid #347928;
+    /* Dark green border */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    max-height: 300px;
+    /* Limit the height to 300px (or adjust as needed) */
+    overflow-y: scroll;
+    /* Allow vertical scrolling if content overflows */
+}
+
+/* Grid heading layout */
+.expense-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Four equal columns */
+    gap: 10px;
+    font-weight: bold;
+    /* Bold text */
+    text-align: center;
+    /* Center the headings */
+    padding: 10px;
+    background-color: #FCCD2A;
+    /* Highlight the header row */
+    color: #347928;
+    /* Dark green text for the header */
+    margin-bottom: 10px;
+    /* Add space between the header and the expense items */
+}
+
+/* Expense list grid layout */
+#expenseList div {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Four equal columns */
+    gap: 10px;
+    /* Add space between columns */
+    align-items: center;
+    /* Vertically center text */
+    padding: 10px;
+    background-color: #C0EBA6;
+    /* Light green background for each expense */
+    /* border-bottom: 1px solid #347928; */
+    /* Dark green border between items */
+    font-size: 14px;
+    /* Slightly reduced font size */
+}
+
+/* Remove default margins for paragraphs */
+#expenseList p {
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Category totals styling */
+#categoryTotals {
+    background-color: #C0EBA6;
+    padding: 5px;
+    /* Light green background */
+}
+
+#categoryTotals p {
+    color: #1d53e6;
+    padding-bottom: 9px;
+    padding-top: 1px;
+}
+
+/* Month selector styling */
+#monthDropdown {
+    margin-bottom: 20px;
+    /* Adds space between the dropdown and the form */
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid #347928;
+    /* Dark green border */
+    background-color: #FFFBE6;
+    /* Light cream background */
+    color: #347928;
+    /* Dark green text */
+}
+
+/* zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz */
+.category-bar-Transportation {
+    width: 100%;
+    height: 30px;
+    background-color: #317408;
+    transform-origin: left;
+    /* display: inline-flexbox; */
+}
+
+.category-bar-EssentialFood {
+    width: 100%;
+    height: 30px;
+    background-color: #e07f10;
+    transform-origin: left;
+    /* display: inline-flexbox; */
+}
+
+.category-bar-LuxuryFood {
+    width: 100%;
+    height: 30px;
+    background-color: #f3e522;
+    transform-origin: left;
+}
+
+.category-bar-Healthcare {
+    width: 100%;
+    height: 30px;
+    background-color: #124f68;
+    transform-origin: left;
+}
+
+.category-bar-Utilities {
+    width: 100%;
+    height: 30px;
+    background-color: #1d53e6;
+    transform-origin: left;
+}
+
+.category-bar-Clothes {
+    width: 100%;
+    height: 30px;
+    background-color: #c542d1;
+    transform-origin: left;
+}
+
+.category-bar-Others {
+    width: 100%;
+    height: 30px;
+    background-color: #ec072d;
+    transform-origin: left;
+}
+
+.category-diagram {
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    border: solid 2px #1d53e6;
+    padding: 5px;
+}
