@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer with Circular Progress</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2 id="timerTitle">Set Your Timers</h2>
+
+
+
+    <!-- Slider to select the Study Time -->
+    <div class="rangeContainer">
+        <label for="studyRange" class="selector-labels">Select Study Time </label>
+        <input type="range" id="studyRange" min="5" max="60" value="20">
+        <p class="selector-labels"><span class="selector-labels" id="studyValue">20</span> minutes</p>
+    </div>
+
+    <!-- Slider to select the Rest Time -->
+    <div class="rangeContainer">
+        <label for="restRange" class="selector-labels">Select Rest Time </label>
+        <input type="range" id="restRange" min="5" max="50" value="15">
+        <p class="selector-labels"><span class="selector-labels" id="restValue">15</span> minutes</p>
+    </div>
+
+    <!-- Slider to select the number of cycles -->
+    <div class="rangeContainer">
+        <label for="cycleRange" class="selector-labels">Select Number of Turns </label>
+        <input type="range" id="cycleRange" min="1" max="10" value="3">
+        <p class="selector-labels"><span class="selector-labels" id="cycleValue">3</span> Turns</p>
+    </div>
+
+    <!-- Div to display alert messages -->
+    <div class="Message">
+
+        <div id="alertMessage1"></div>
+        <div id="alertMessage2"></div>
+        <div id="alertMessage3"></div>
+        <div id="alertMessage4"></div>
+    </div>
+
+
+    <br>
+
+    <div class="studyRestGrid">
+        <h3 id="studyTimeDisplay">Study Time: 0</h3>
+        <h3 id="restTimeDisplay">Rest Time: 0</h3>
+        <!-- Circular Progress Bar for Study Timer -->
+        <div class="circle-container study-time">
+            <div class="circle-progress"></div>
+        </div>
+
+        <!-- Circular Progress Bar for Rest Timer -->
+        <div class="circle-container rest-time">
+            <div class="circle-progress"></div>
+        </div>
+
+    </div>
+
+
+
+    <!-- Buttons to start and stop the timer -->
+    <div class="buttonsGrid">
+
+        <button id="startButton" class="button-27">Start Pomodoro</button>
+        <button id="stopButton" class="button-27">Stop Timer</button>
+    </div>
+
+    <div class="scoresDiv">
+        <div class="scoresDiv1">
+            <h3 id="sessionScoreHeading">Session Score</h3>
+            <p id="sessionScore"></p>
+
+        </div>
+        <div class="scoresDiv2">
+            <h3 id="dailyScoreHeading">Today's Score</h3>
+            <p id="dailyScore"></p>
+
+        </div>
+        <div class="scoresDiv3">
+            <h3 id="totalScoreHeading">Total Score</h3>
+            <p id="totalScore"></p>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

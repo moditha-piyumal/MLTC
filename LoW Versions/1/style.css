@@ -1,0 +1,198 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#timerTitle {
+    text-align: center;
+    padding: 13px;
+    font-size: 36px;
+}
+
+/* Shared styles for the circle containers */
+.circle-container {
+    position: relative;
+    width: 120px;
+    /* Adjust size as needed */
+    height: 120px;
+    border-radius: 50%;
+    /* Make it circular */
+    background: conic-gradient(#001F3F 0deg, #631a09 180deg,
+            #001F3F 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    /* Add some spacing between circles */
+}
+
+/* Inner progress circle */
+.circle-progress {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    /* Make it circular */
+    background-color: #6A9AB0;
+    /* Inner circle color */
+    clip-path: circle(50%);
+}
+
+button {
+    margin: 10px;
+    background-color: initial;
+    background-image: linear-gradient(-180deg, #e71442, #631a09);
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Inter, -apple-system, system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+    height: 40px;
+    line-height: 40px;
+    outline: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    pointer-events: auto;
+    position: relative;
+    text-align: center;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: 200px;
+    z-index: 9;
+    border: 0;
+    transition: box-shadow .2s;
+}
+
+button:hover {
+    box-shadow: rgba(19, 7, 3, 0.5) 0 3px 8px;
+    background-image: linear-gradient(-180deg, #ec508c, #d13714);
+
+}
+
+button:disabled {
+    background-image: linear-gradient(-180deg, #3f3336, #998884);
+    cursor: default;
+}
+
+.rangeContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 5px;
+    min-width: 300px;
+    border: 2px solid #D2E0FB;
+    background-color: #001F3F;
+    margin: 15px 10px;
+    border-radius: 20px;
+    text-align: center;
+    padding-bottom: 6px;
+}
+
+.selector-labels {
+    background-color: #001F3F;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.studyRestGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    background-color: #6A9AB0;
+    margin: 15px 10px;
+    border-radius: 20px;
+    border: 2px solid #d80f5c;
+
+}
+
+.studyRestGrid h3 {
+    color: #001F3F;
+    background-color: #6A9AB0;
+}
+
+.buttonsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 450px;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+    outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #6A9AB0;
+    border-radius: 10px;
+    height: 14px;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    /* Override default look */
+    appearance: none;
+    margin-top: -2.5px;
+    /* Centers thumb on the track */
+    background-color: #D2E0FB;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid #D2E0FB;
+    outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+    background-color: #6A9AB0;
+    border-radius: 10px;
+    height: 10px;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+    background-color: #D2E0FB;
+    border: none;
+    /*Removes extra border that FF applies*/
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    outline: 3px solid #2810e0;
+    outline-offset: 0.125rem;
+}
