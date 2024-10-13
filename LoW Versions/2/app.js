@@ -10,6 +10,8 @@ let isStudyPhase = true;
 let sessionScore = 0;
 let dailyScore = 0;
 let totalScore = 0;
+let dailyScoresHistory =
+	JSON.parse(localStorage.getItem("dailyScoresHistory")) || [];
 
 // LocalStorage keys
 const DAILY_SCORE_KEY = "dailyScore";
@@ -27,6 +29,8 @@ var alertMessage1 = document.getElementById("alertMessage1");
 var alertMessage2 = document.getElementById("alertMessage2");
 var alertMessage3 = document.getElementById("alertMessage3");
 var alertMessage4 = document.getElementById("alertMessage4");
+
+var startButton = document.querySelector("#startButton");
 
 // ======= PART 3: Selecting Display Elements =======
 var studyTimeDisplay = document.querySelector("#studyTimeDisplay");
@@ -91,7 +95,7 @@ function setCircleProgress(progress, type) {
 	circle.style.background = `conic-gradient(
         #D2E0FB ${progress * 3.6}deg,
         #001F3F 0deg, #631a09 180deg,
-            #001F3F 360deg
+        #001F3F 360deg
     )`;
 }
 
@@ -104,6 +108,7 @@ function updateCircleProgress(timeLeft, totalTime, type) {
 // ======= PART 7: Sounds for Study and Rest End =======
 let studyEndSound = new Audio("path_to_study_end.wav");
 let restEndSound = new Audio("path_to_rest_end.wav");
+
 // ======= PART 8: Study Timer Function =======
 function startStudyTimer() {
 	studyTime = parseInt(studyInput.value) * 60;
@@ -133,8 +138,10 @@ function startStudyTimer() {
 			// Add a small delay before starting the rest timer to render 100% progress
 			setTimeout(startRestTimer, 100);
 		}
-	}, 1000); // 1 second interval
+	}, 100); // 1 second interval
 }
+
+// 1000x
 
 // Separate function to handle scoring for the study session
 function handleStudySessionScoring() {
@@ -199,6 +206,8 @@ function handleStudySessionScoring() {
 
 // ======= PART 9: Rest Timer Function =======
 function startRestTimer() {
+	updateDateAndScore(); // Call the function to check and update the date before starting the rest timer
+
 	restTime = parseInt(restInput.value) * 60;
 	document.querySelector(
 		"#timerTitle"
@@ -239,6 +248,7 @@ function startRestTimer() {
 				// Reset the displays
 				studyTimeDisplay.innerHTML = "All Turns are Completed!";
 				restTimeDisplay.innerHTML = "We are so Proud of You!";
+
 				document.querySelector("#timerTitle").innerHTML = "Well Done!";
 
 				// Reset progress circles
@@ -255,11 +265,12 @@ function startRestTimer() {
 				setTimeout(startStudyTimer, 100);
 			}
 		}
-	}, 1000); // 1 second interval
+	}, 100); // 1 second interval
 }
 
+// 1000x
+
 // ======= PART 10: Start Button Event Listener =======
-var startButton = document.querySelector("#startButton");
 startButton.addEventListener("click", function () {
 	cycleCount = parseInt(cycleInput.value); // Set the number of cycles
 	currentCycle = 1; // Reset the cycle counter
@@ -273,16 +284,16 @@ startButton.addEventListener("click", function () {
 	restInput.disabled = true;
 	cycleInput.disabled = true;
 });
+
 // ======= PART 11: Stop Button Event Listener =======
-var stopButton = document.querySelector("#stopButton");
 stopButton.addEventListener("click", function () {
 	clearInterval(intervalID);
 	document.querySelector("#timerTitle").innerHTML = "Pomodoro Stopped";
 
-	// Calculate the total score of the current session (only include completed study sessions)
-	if (currentCycle > 1) {
-		// Ensure at least one study session was completed
-		totalSessionScore = sessionScore - 10; // Apply penalty for stopping early
+	// Check if the stop button is pressed during study time
+	if (isStudyPhase) {
+		// Apply a penalty for stopping during study time
+		totalSessionScore = sessionScore - 10; // Apply penalty for stopping early during study
 		if (totalSessionScore < 0) totalSessionScore = 0; // Prevent negative scores
 
 		// Update the session score display
@@ -291,16 +302,25 @@ stopButton.addEventListener("click", function () {
 		// Update daily and total scores
 		dailyScore += totalSessionScore;
 		totalScore += totalSessionScore;
-		// Save the updated scores to localStorage
-		saveScores();
-
-		// Update the daily and total score displays
-		dailyScoreDisplay.innerHTML = dailyScore;
-		totalScoreDisplay.innerHTML = totalScore;
 	} else {
-		// If no study session was completed, display a zero score
-		sessionScoreDisplay.innerHTML = 0;
+		// If stop is pressed during rest time, add the session score as usual
+		dailyScore += sessionScore;
+		totalScore += sessionScore;
+
+		// Apply penalty for not completing all turns
+		dailyScore -= 5; // Adjust this penalty if necessary
+		totalScore -= 5;
+
+		if (dailyScore < 0) dailyScore = 0;
+		if (totalScore < 0) totalScore = 0;
 	}
+
+	// Save the updated scores to localStorage
+	saveScores();
+
+	// Update the daily and total score displays
+	dailyScoreDisplay.innerHTML = dailyScore;
+	totalScoreDisplay.innerHTML = totalScore;
 
 	// Reset the displays
 	studyTimeDisplay.innerHTML = "";
@@ -377,20 +397,85 @@ checkAndResetDailyScore(); // Call the function to reset daily score if needed
 /*
 var clearScoresButton = document.querySelector("#timerTitle");
 clearScoresButton.addEventListener("click", function () {
-	// Clear scores from localStorage
-	localStorage.clear();
+    // Clear scores from localStorage
+    localStorage.clear();
 
-	// Reset scores in the variables
-	sessionScore = 0;
-	dailyScore = 0;
-	totalScore = 0;
+    // Reset scores in the variables
+    sessionScore = 0;
+    dailyScore = 0;
+    totalScore = 0;
 
-	// Update the score displays
-	sessionScoreDisplay.innerHTML = "0";
-	dailyScoreDisplay.innerHTML = "0";
-	totalScoreDisplay.innerHTML = "0";
+    // Update the score displays
+    sessionScoreDisplay.innerHTML = "0";
+    dailyScoreDisplay.innerHTML = "0";
+    totalScoreDisplay.innerHTML = "0";
 
-	// Optionally show an alert or message to indicate scores have been cleared
-	// alert("All scores have been cleared!");
+    // Optionally show an alert or message to indicate scores have been cleared
+    // alert("All scores have been cleared!");
 });
 */
+
+// ======= PART 16: Check and Update Date and Score =======
+function updateDateAndScore() {
+	const currentDate = new Date().toLocaleDateString(); // Get the current date as a string
+	const lastOpenDate = localStorage.getItem(LAST_OPEN_DATE_KEY);
+
+	// If the last open date is different from today's date, reset the daily score
+	if (lastOpenDate !== currentDate) {
+		// Save the previous day's score in the history array
+		if (dailyScore > 0) {
+			dailyScoresHistory.unshift({ date: lastOpenDate, score: dailyScore });
+			localStorage.setItem(
+				"dailyScoresHistory",
+				JSON.stringify(dailyScoresHistory)
+			);
+		}
+
+		dailyScore = 0; // Reset the daily score
+		localStorage.setItem(DAILY_SCORE_KEY, dailyScore); // Update in localStorage
+		localStorage.setItem(LAST_OPEN_DATE_KEY, currentDate); // Update the last open date
+
+		// Update the daily score display
+		dailyScoreDisplay.innerHTML = dailyScore;
+
+		// Update the list display
+		updateDailyScoresList();
+	}
+
+	// Log value for debugging
+	console.log("After reset check, dailyScore:", dailyScore);
+}
+
+// ======= PART 17: Update and Display Daily Scores List =======
+
+// Function to update the daily scores list
+function updateDailyScoresList() {
+	const dailyScoresList = document.createElement("div");
+	dailyScoresList.innerHTML = "<h3>Past Daily Scores:</h3>";
+
+	if (dailyScoresHistory.length === 0) {
+		dailyScoresList.innerHTML += "<p>No scores recorded yet.</p>";
+	} else {
+		dailyScoresHistory.forEach((entry) => {
+			const date = new Date(entry.date).toLocaleDateString("en-US", {
+				year: "numeric",
+				month: "2-digit",
+				day: "2-digit",
+			});
+			dailyScoresList.innerHTML += `<p>Date: ${date}, Score: ${entry.score}</p>`;
+		});
+	}
+	// dailyScoresList.classList.add("dailyScoreList");
+
+	// Append the list to the body or a specific container
+	const existingList = document.getElementById("dailyScoresList");
+	if (existingList) {
+		existingList.replaceWith(dailyScoresList);
+	} else {
+		document.body.appendChild(dailyScoresList);
+	}
+	dailyScoresList.id = "dailyScoresList";
+}
+
+// Call this function to update the display of the list when the page loads
+updateDailyScoresList();

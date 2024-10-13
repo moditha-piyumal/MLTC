@@ -233,3 +233,27 @@ input[type="range"]:focus::-moz-range-thumb {
     align-items: center;
     text-align: center;
 }
+
+/* 
+#streakDisplay {
+    color: #d13714;
+    padding: 10px;
+    font-size: 30px;
+} */
+
+#dailyScoresList {
+    /* Add styles for the container */
+    padding: 10px;
+    border: 3px solid #ccc;
+    background-color: #000;
+    color: #d13714;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 12px;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: scroll;
+    text-align: center;
+    /* Add scroll if content overflows */
+}
