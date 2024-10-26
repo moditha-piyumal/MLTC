@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Buy List and Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- To-Buy List Section -->
+    <section class="to-buy-section">
+        <h2>To-Buy List</h2>
+        <form id="toBuyForm" class="to-buy-form">
+            <input type="text" id="buyItemName" placeholder="Enter item name" required>
+            <select id="buyCategory">
+                <option value="">Select category</option>
+                <option value="EssentialFood">Essential Food</option>
+                <option value="LuxuryFood">Luxury Food</option>
+                <option value="Transportation">Transportation</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Utilities">Utilities</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Others">Others</option>
+            </select>
+            <button type="submit">Add to Buy List</button>
+        </form>
+
+        <!-- Display the To-Buy List -->
+        <div id="toBuyList" class="list">
+            <!-- Placeholder item to check the CSS -->
+            <div class="to-buy-item">
+                <!-- <div>Item Name: Placeholder Item</div>
+                <div>Category: Essential Food</div>
+                <input type="number" placeholder="Enter price" class="price-input">
+                <button>Bought</button> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Totals Section -->
+    <section id="totals-section">
+
+    </section>
+    <!-- Expenses Section -->
+    <section class="expenses-section">
+        <h2>Expenses</h2>
+
+        <!-- Month Selector Dropdown -->
+        <label for="monthDropdown">Select Month:</label>
+        <select id="monthDropdown">
+            <option value="">Select a month</option>
+            <!-- Options to be added dynamically by JS -->
+        </select>
+
+        <!-- Display the Expenses List -->
+        <div id="expenseList" class="list">
+            <!-- Placeholder item to check the CSS -->
+            <div class="expenses-item">
+                <div>Item: Placeholder Expense</div>
+                <div>Category: Essential Food</div>
+                <div>Amount: $100</div>
+                <div>Date: 2024-10-20</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Include JS -->
+    <script src="app.js"></script>
+</body>
+
+</html>
