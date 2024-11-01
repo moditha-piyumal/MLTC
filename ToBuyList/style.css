@@ -37,6 +37,8 @@ section {
 }
 
 /* Expenses Section Styling */
+#login-section,
+#registerSection,
 .expenses-section {
     background-color: #ffe0b2;
     /* Light orange background */
@@ -47,7 +49,19 @@ section {
     border: solid 1px;
 }
 
+#login-section a,
+#registerSection a {
+    color: #898989;
+}
+
+#login-section a:visited,
+#registerSection a:visited {
+    color: #051815;
+}
+
 /* To-Buy List Form Styles */
+#registerForm input,
+#loginForm input,
 .to-buy-form input,
 .to-buy-form select,
 .to-buy-form button {
@@ -109,6 +123,8 @@ section {
 }
 
 /* Button Styles */
+#registerForm button,
+#loginForm button,
 .to-buy-form button,
 .price-input+button {
     background-color: #00796b;
