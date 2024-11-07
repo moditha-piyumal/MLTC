@@ -2,6 +2,8 @@
 console.log("Hooo");
 
 // Import required modules
+require("dotenv").config();
+
 const mongoose = require("mongoose"); // Mongoose to connect to MongoDB
 const bcrypt = require("bcrypt"); // Bcrypt for password hashing
 const jwt = require("jsonwebtoken");
@@ -16,8 +18,7 @@ const Expense = require("./models/Expense");
 const cors = require("cors"); // Import CORS middleware
 
 // MongoDB connection string - replace <password> with the actual password
-const dbURI =
-	"mongodb+srv://piyumalwijeratne:cccXXXzzz1992@moditha001.cuz29.mongodb.net/ToBuyListApp?retryWrites=true&w=majority&appName=Moditha001";
+const dbURI = process.env.MONGODB_URI;
 
 // Connect to MongoDB using Mongoose
 mongoose
@@ -48,7 +49,7 @@ const authenticateToken = (req, res, next) => {
 
 	try {
 		// Verify the token using the secret key
-		const verified = jwt.verify(token, "your_jwt_secret_key");
+		const verified = jwt.verify(token, process.env.JWT_SECRET_KEY);
 		req.user = verified; // Store user info from token in the request object
 		next(); // Continue to the next middleware or route
 	} catch (error) {
@@ -112,7 +113,7 @@ app.post("/login", async (req, res) => {
 		}
 
 		// Generate a JWT token
-		const token = jwt.sign({ userId: user._id }, "your_jwt_secret_key", {
+		const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY, {
 			expiresIn: "1h",
 		});
 
