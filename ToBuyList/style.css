@@ -1,231 +1,43 @@
-/* Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* General Body Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    /* Sans-serif font */
-    font-size: 15px;
-    /* Minimum font size */
-    background-color: #f4f4f4;
-    /* Light background for body */
-    padding: 20px;
-    color: #333;
-    /* Dark text color for general readability */
-    font-weight: 600;
-    /* Make all fonts bolder */
-}
-
-/* Section Styles */
-section {
-    margin-bottom: 40px;
-}
-
-/* To-Buy Section Styling */
-.to-buy-section {
-    background-color: #e0f7fa;
-    /* Light blue background */
-    color: #00796b;
-    /* Dark teal for text */
-    padding: 20px;
-    border-radius: 10px;
-    border: solid 1px;
-}
-
-/* Expenses Section Styling */
-#login-section,
-#registerSection,
-.expenses-section {
-    background-color: #ffe0b2;
-    /* Light orange background */
-    color: #e65100;
-    /* Dark orange for text */
-    padding: 20px;
-    border-radius: 10px;
-    border: solid 1px;
-}
-
-#login-section a,
-#registerSection a {
-    color: #898989;
-}
-
-#login-section a:visited,
-#registerSection a:visited {
-    color: #051815;
-}
-
-/* To-Buy List Form Styles */
-#registerForm input,
-#loginForm input,
-.to-buy-form input,
-.to-buy-form select,
-.to-buy-form button {
-    width: 100%;
-    /* Full width for mobile responsiveness */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    /* Keep the minimum font size */
-    font-weight: 600;
-    /* Bold text for inputs and buttons */
-}
-
-/* Category and Month Selector Styling */
-#buyCategory,
-#monthDropdown {
-    appearance: none;
-    /* Remove default arrow */
-    background-color: #00796b;
-    /* Dark teal background */
-    color: white;
-    /* White text */
-    padding: 10px;
-    font-weight: 600;
-    border: 1px solid #00796b;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    /* Full width to match other inputs */
-}
-
-/* Hover effect for category and month selectors */
-#buyCategory:hover,
-#monthDropdown:hover {
-    background-color: #004d40;
-    /* Darker teal on hover */
-}
-
-/* Options styling */
-#buyCategory option,
-#monthDropdown option {
-    background-color: #e0f7fa;
-    /* Light blue background for options */
-    color: #00796b;
-    /* Dark teal text */
-    padding: 10px;
-    font-weight: 600;
-}
-
-/* Option hover effect */
-#buyCategory option:hover,
-#monthDropdown option:hover {
-    background-color: #004d40;
-    /* Dark teal on hover */
-    color: white;
-    /* White text on hover */
-}
-
-/* Button Styles */
-#registerForm button,
-#loginForm button,
-.to-buy-form button,
-.price-input+button {
-    background-color: #00796b;
-    /* Dark teal background */
-    color: white;
-    /* White text for contrast */
-    cursor: pointer;
-    border: none;
-    font-size: 15px;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-weight: 600;
-    /* Bold text for buttons */
-    transition: background-color 0.3s ease;
-}
-
-/* Button Hover Effect */
-.to-buy-form button:hover,
-.price-input+button:hover {
-    background-color: #004d40;
-    /* Darker teal on hover */
-}
-
-
-/* Style the input field for price in the to-buy list */
-.price-input {
-    width: 30%;
-    /* Make input full width but leave room for the button */
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 15px;
-    /* Keep minimum font size */
-    margin-right: 5px;
-    margin-left: 5px;
-    /* Space between input and button */
-}
-
-/* To-Buy and Expense Item Styling */
-.to-buy-item,
-.expenses-item {
-    margin-bottom: 5px;
-    margin-top: 5px;
-    padding: 10px;
-    background-color: #fff;
-    /* White background for clarity */
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    line-height: 2;
-}
-
-/* Responsive design for mobile layout */
-@media (max-width: 768px) {
-
-    .to-buy-item,
-    .expenses-item {
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .price-input {
-        width: 100%;
-        /* Make inputs full width on mobile */
-    }
-
-    .price-input+button {
-        width: 100%;
-        /* Make button full width on mobile */
-        margin-top: 10px;
-    }
-}
-
-#totals-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background-color: #e0f7fa;
-    border: solid 1px;
-    padding: 5px;
-    border-radius: 10px;
-    color: #004d40;
-
-}
-
-.category-total p {
-    display: grid;
-    justify-items: center;
-    grid-template-columns: 1fr;
-    padding-bottom: 5px;
-}
-
-.category-total p .category-percentage {
-    background-color: #004d40;
-    color: #fff;
-    padding: 19px 5px;
-    border-radius: 50%;
-    min-width: 80px;
-    min-height: 80px;
+h1 {
     text-align: center;
-    align-content: center;
+    font-size: 3em;
+    color: blue;
+    padding: 2em;
+    border: firebrick solid 3px;
+    margin: 0.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+p {
+    text-align: center;
+    font-size: 1em;
+    color: blue;
+    border: firebrick solid 3px;
+    margin: 0.5rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 3em;
+
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: firebrick;
+    border: forestgreen solid 3px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0.1rem;
+    margin: 0.5rem;
+    font-size: 3em;
+    display: block;
+}
+
+a:hover {
+    border: firebrick solid 3px;
+    color: blue;
 }

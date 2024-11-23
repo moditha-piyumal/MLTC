@@ -4,103 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Buy List and Expense Tracker</title>
+    <title>To-Buy-List Link</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Login Form Section (Initially Visible) -->
-    <div id="login-section">
-        <h2>Login for the To-Buy-List by Moditha</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p id="loginError" style="display: none; color: red;">Invalid login credentials.</p>
-        <p>Don’t have an account? <a href="#" onclick="showRegister()">Sign up here</a></p>
+    <h1>To-Buy-List</h1>
+    <p>This is my first full stack project. This is an app which I need for a certain requirement in my household. We
+        often go to the nearby town to buy groceries and other stuff. However, we make the grocery list when we are
+        about to head to the town and we often forget a thing or two that must be bought. So, I created this live
+        grocery list. This is a live version of the piece of paper that you take when you are heading to the market.
+        When you remember that you need to buy something, you can add that item to the To-Buy-List. Then, after you go
+        to the market, you can add the price of the item that you bought, and add the same item to the expenses list.
+        This is a simple software and as it is my first project I did not bother to include certain features like delete
+        buttons. But, this is a software which has a utility value. The link to the deployment is given below. The
+        software maybe a bit slow as it has been deployed on a free version of render.</p>
+    <a href="https://to-buy-list.onrender.com/">To-Buy-List</a>
 
-    </div>
-    <!-- Registration Section -->
-    <div id="registerSection" style="display: none;">
-        <h2>Register for the To-Buy-List by Moditha</h2>
-
-
-        <form id="registerForm">
-            <input type="text" id="registerUsername" placeholder="Username" required>
-            <input type="email" id="registerEmail" placeholder="Email" required>
-            <input type="password" id="registerPassword" placeholder="Password" required>
-            <button type="submit">Sign Up</button>
-        </form>
-        <p>Already have an account? <a href="#" onclick="showLogin()">Log in here</a></p>
-    </div>
-
-
-
-    <!-- Main App Content Section (Initially Hidden) -->
-    <div id="app-content" style="display: none;">
-        <button id="logoutButton" onclick="handleLogout()">Logout</button>
-        <!-- To-Buy List Section -->
-        <section class="to-buy-section">
-            <h2>To-Buy List</h2>
-            <form id="toBuyForm" class="to-buy-form">
-                <input type="text" id="buyItemName" placeholder="Enter item name" required>
-                <select id="buyCategory">
-                    <option value="">Select category</option>
-                    <option value="EssentialFood">Essential Food</option>
-                    <option value="LuxuryFood">Luxury Food</option>
-                    <option value="Transportation">Transportation</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Utilities">Utilities</option>
-                    <option value="Clothes">Clothes</option>
-                    <option value="Others">Others</option>
-                </select>
-                <button>Add to Buy List</button>
-            </form>
-
-            <!-- Display the To-Buy List -->
-            <div id="toBuyList" class="list">
-                <!-- Placeholder item to check the CSS -->
-                <div class="to-buy-item">
-                    <!-- <div>Item Name: Placeholder Item</div>
-                    <div>Category: Essential Food</div>
-                    <input type="number" placeholder="Enter price" class="price-input">
-                    <button>Bought</button> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Category Totals Section -->
-        <section id="totals-section">
-
-        </section>
-        <!-- Expenses Section -->
-        <section class="expenses-section">
-            <h2>Expenses</h2>
-
-            <!-- Month Selector Dropdown -->
-            <label for="monthDropdown">Select Month:</label>
-            <select id="monthDropdown">
-                <option value="">Select a month</option>
-                <!-- Options to be added dynamically by JS -->
-            </select>
-
-            <!-- Display the Expenses List -->
-            <div id="expenseList" class="list">
-                <!-- Placeholder item to check the CSS -->
-                <div class="expenses-item">
-
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-
-    <!-- Include JS -->
-    <script src="app.js"></script>
 </body>
 
 </html>

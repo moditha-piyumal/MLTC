@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bed Time Story Teller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="save-and-load-buttons">
+        <button id="save-progress-btn" type="button">Save Progress</button>
+        <button id="load-progress-btn">Load Progress</button>
+
+    </div>
+    <div id="media-player">
+        <input type="file" id="file-input" accept="video/*" />
+        <h1>Bed Time Story Teller</h1>
+        <video id="video-player" src="" class="hidden"></video>
+
+
+        <div id="controls">
+            <button id="play-pause">Play</button>
+            <span>
+
+                <span id="current-time">00:00</span> / <span id="total-time">00:00</span>
+            </span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <input type="range" id="volume-control" min="0" max="1" step="0.1" value="1">
+            <div id="timestamps"></div>
+        </div>
+    </div>
+    <!-- The Timestamps after falling asleep goes here. -->
+    <div id="newtimestamps"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
